@@ -9,6 +9,7 @@ class Post extends Model
 {
     use HasFactory;
     protected $with=['author'];
+    protected $guarded=['id'];
     public function author()
     {
         return $this->belongsTo(User::class, 'author_id');
